@@ -1,0 +1,22 @@
+package com.skilldistillery.jpacrud.controllers;
+
+
+@Controller
+public class HeroController {
+
+	@Autowired
+	HeroDAO dao;
+	
+	@RequestMapping(path = "index.do", method = RequestMethod.GET)
+	public String index() {
+	  return "WEB-INF/intro.html";
+	}
+	
+	@RequestMapping(path="getHero.do", method = RequestMethod.GET)
+	public ModelAndView displayHero(int heroid) {
+		System.out.println("WEB-INF/herodetails.jsp");
+		ModelAndView mv = new ModelAndView();
+		
+		return mv;
+	}
+}
