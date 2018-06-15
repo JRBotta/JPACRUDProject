@@ -1,6 +1,8 @@
 package com.skilldistillery.jpacrud.data;
 
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -9,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.skilldistillery.jpacrud.entities.Hero;
 
-@Transactional
 @Component
 public class HeroDAOImpl implements HeroDAO{
 	
@@ -20,7 +21,42 @@ public class HeroDAOImpl implements HeroDAO{
 		return em.find(Hero.class, heroid);
 	}
 	
+	public List<Hero> getAllHeroes() {
+		
+		String query = "select h from Hero h";
+		List<Hero> result = em.createQuery(query).getResultList();
+		return result;
+	}
+	@Transactional
 	public void newHero(Hero hero) {
 		em.persist(hero);
+	}
+	@Transactional
+	public void deleteHero(int heroid) {
+		Hero hero = em.find(Hero.class, heroid);
+		em.remove(hero);
+	}
+	
+	@Transactional
+	public Hero updateHero(Hero hero) {
+		Hero managed = em.find(Hero.class, hero.getId());
+		managed.setBonds(hero.getBonds());
+		managed.setCharisma(hero.getCharisma());
+		managed.setConstitution(hero.getConstitution());
+		managed.setCurrentHP(hero.getCurrentHP());
+		managed.setDexterity(hero.getDexterity());
+		managed.setDndClass(hero.getDndClass());
+		managed.setFlaws(hero.getFlaws());
+		managed.setIdeals(hero.getIdeals());
+		managed.setIntelligence(hero.getIntelligence());
+		managed.setLevel(hero.getLevel());
+		managed.setMaxHP(hero.getMaxHP());
+		managed.setName(hero.getName());
+		managed.setPersonalityTraits(hero.getPersonalityTraits());
+		managed.setRace(hero.getRace());
+		managed.setStrength(hero.getStrength());
+		managed.setTempHP(hero.getTempHP());
+		managed.setWisdom(hero.getWisdom());
+		return managed;
 	}
 }

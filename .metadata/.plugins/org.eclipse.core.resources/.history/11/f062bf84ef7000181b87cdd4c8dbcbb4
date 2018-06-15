@@ -1,0 +1,63 @@
+package com.skilldistillery.jpacrud.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.skilldistillery.jpacrud.data.HeroDAO;
+import com.skilldistillery.jpacrud.entities.Hero;
+
+@Controller
+public class HeroController {
+
+	@Autowired
+	HeroDAO dao;
+
+	@RequestMapping(path = "index.do", method = RequestMethod.GET)
+	public ModelAndView index() {
+		ModelAndView mv = new ModelAndView();
+		List<Hero> heroes = dao.getAllHeroes();
+		mv.addObject("heroes", heroes);
+		mv.setViewName("WEB-INF/intro.jsp");
+		return mv;
+	}
+
+	@RequestMapping(path = "getHero.do", method = RequestMethod.GET)
+	public ModelAndView displayHero(int heroid) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/herodetails.jsp");
+		Hero hero = dao.getHeroById(heroid);
+		mv.addObject("hero", hero);
+		return mv;
+	}
+
+	@RequestMapping(path = "updateHero.do", method = RequestMethod.POST)
+	public ModelAndView updateHero(Hero hero) {
+		ModelAndView mv = new ModelAndView();
+		System.out.println(hero);
+		Hero managed = dao.updateHero(hero);
+		mv.setViewName("WEB-INF/herodetails.jsp");
+		mv.addObject("hero", managed);
+		return mv;
+	}
+
+	@RequestMapping(path = "createHero.do", method = RequestMethod.POST)
+	public ModelAndView createHero() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("WEB-INF/createhero.jsp");
+		return mv;
+	}
+
+	@RequestMapping(path = "created.do", method = RequestMethod.POST)
+	public ModelAndView created(Hero hero) {
+		ModelAndView mv = new ModelAndView();
+		dao.newHero(hero);
+		mv.setViewName("WEB-INF/herodetails.jsp");
+		mv.addObject("hero", hero);
+		return mv;
+	}
+}

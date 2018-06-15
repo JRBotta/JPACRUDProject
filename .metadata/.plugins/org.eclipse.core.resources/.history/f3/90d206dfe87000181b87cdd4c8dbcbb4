@@ -1,0 +1,40 @@
+html, body {
+	color: red;
+	text-align: left;
+	background: url(https://images.alphacoders.com/743/74353.jpg);
+	    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	font-family: futura;
+		padding-top:0.3em;
+	
+}
+
+h1 {
+	padding: 15px 0 15px 0;
+	text-align: center;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #D0F8FF;
+	text-shadow: 0 0 5px #A5F1FF, 0 0 10px #A5F1FF, 0 0 20px #A5F1FF, 0 0
+		30px #A5F1FF, 0 0 40px #A5F1FF;
+}
+
+#specialfeatures {
+	 height: 40px;
+    width : 250px;
+}
+.headings  {
+	color:hotpink;
+	font-size: 1.4em;
+}
+
+form {
+	display: inline-block;
+}
+
+.inline {
+   display:inline-block;
+   margin-right:5px;
+}

@@ -1,0 +1,13 @@
+package com.skilldistillery.jpacrud.data;
+
+import java.util.List;
+
+import com.skilldistillery.jpacrud.entities.Hero;
+
+public interface HeroDAO {
+	public void newHero(Hero hero);
+	public Hero getHeroById(int heroid);
+	public Hero updateHero(Hero hero);
+	public List<Hero> getAllHeroes();
+	public void deleteHero(Hero hero);
+}
