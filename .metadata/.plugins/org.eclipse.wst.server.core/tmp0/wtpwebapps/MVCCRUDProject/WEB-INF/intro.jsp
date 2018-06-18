@@ -29,7 +29,7 @@
 		</form>
 		<br>
 		<form action="createHero.do" method="POST">
-			Create Hero<input type="submit" value="Create Hero" />
+			<input type="submit" value="Create Hero" />
 		</form>
 		<br> <br>
 		<div class="container">
@@ -39,7 +39,7 @@
 						<td>No Heroes Found</td>
 					</c:if>
 					<c:forEach items="${heroes}" var="hero">
-					<a href="getHero.do?cid=${hero.id}">
+					<a href="getHero.do?heroid=${hero.id}">
 						<td><span class="headings">Name: </span>
 						<c:out value="${hero.name}" />
 						<td><br>
@@ -51,25 +51,7 @@
 					</c:forEach>
 				</div>
 
-				<form action="deleteHero.do" method="GET">
-					Delete Hero by ID <input type="number" id="searchherobyid"
-						name="heroid" placeholder="Type in Hero ID" required /> <input
-						type="submit" value="Submit" />
-				</form>
-				<br>
-				<form action="searchactorbyid.do" method="GET">
-					Search for Actor by ID <input type="number" id="searchactorbyid"
-						name="actorid" placeholder="Type in Actor ID" required /> <input
-						type="submit" value="Submit" />
-				</form>
-				<br>
-				<form action="addactor.do" method="POST">
-					Add Actor <input type="submit" value="Add Actor" />
-				</form>
-				<br> <a href="finish.html">
-					<button type="button"
-						class="btn btn-secondary btn-lg btn-outline-success">BOBBY
-						DROP ALL TABLES</button> <br>
+				
 			</div>
 
 			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

@@ -1,0 +1,7 @@
+package com.skilldistillery.jpacrud.level;
+
+public class FighterLevelUp {
+	public static void level(int level) {
+		
+	}
+}

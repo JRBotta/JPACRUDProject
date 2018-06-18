@@ -1,0 +1,93 @@
+package com.skilldistillery.jpacrud.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Dice {
+	public static int[] rolld4(int num) {
+		int[] rolls = new int[num];
+		for(int i = 0; i < num; i++) {
+			rolls[i] = (int) (Math.random() * 4) + 1;
+		}
+		return rolls;
+	}
+	
+	public static int[] rolld4() {
+		return new int[] {(int) (Math.random() * 4) + 1};
+	}
+	
+	public static int[] rolld6(int num) {
+		int[] rolls = new int[num];
+		
+		for(int i = 0; i < num; i++) {
+			rolls[i] = (int) (Math.random() * 6) + 1;
+		}
+		return rolls;
+	}
+	public static List<Integer> rollStats() {
+		List<Integer> dice = new ArrayList<>();
+		for(int i = 0; i < 3; i++) {
+			rolls[i] = (int) (Math.random() * 6) + 1;
+		}
+		
+		int min = rolls[0];
+		int temp = 0;
+		
+		for(int i = 1; i < 4; i++) {
+			if(min > rolls[i]) {
+				temp = min;
+				min = rolls[i];
+				rolls[i] = temp;
+			}
+		}
+		
+		for(int i = ; i < 3; i++) {
+			
+		}
+		return rolls;
+	}
+	
+	public static int[] rolld6() {
+		return new int[] {(int) (Math.random() * 6) + 1};
+	}
+	
+	public static int[] rolld10(int num) {
+		int[] rolls = new int[num];
+		for(int i = 0; i < num; i++) {
+			rolls[i] = (int) (Math.random() * 10) + 1;
+		}
+		return rolls;
+	}
+	
+	public static int[] rolld10() {
+		return new int[] {(int) (Math.random() * 10) + 1};
+	}
+	
+	public static int[] rolld12(int num) {
+		int[] rolls = new int[num];
+		for(int i = 0; i < num; i++) {
+			rolls[i] = (int) (Math.random() * 12) + 1;
+		}
+		return rolls;
+	}
+	
+	public static int[] rolld12() {
+		return new int[] {(int) (Math.random() * 12) + 1};
+	}
+	
+	public static int[] rolld20(int num) {
+		int[] rolls = new int[num];
+		for(int i = 0; i < num; i++) {
+			rolls[i] = (int) (Math.random() * 20) + 1;
+		}
+		return rolls;
+	}
+	
+	public static int[] rolld20() {
+		return new int[] {(int) (Math.random() * 20) + 1};
+	}
+	
+	public static int[][] statRoll() {
+		int[][] rolls = 
+	}
+}

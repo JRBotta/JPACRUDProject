@@ -19,18 +19,21 @@
     <form action="updateHero.do" method="POST">
        <span class = "headings">Hero ID: </span><input type= "text" name="id" value="${hero.id}" readonly/><br>
         <span class = "headings">Name: </span> <input type="text" type="text" name = "name" value="${hero.name}"/> <br> 
-        <span class = "headings">Class: </span> <input type="text" id ="dndClass" name ="dndClass" type="text" value="${hero.dndClass}" /><br> 
+        <span class = "headings">Class: </span> <input type="text" id ="dndClass" name ="dndClass" type="text" value="${hero.dndClass}" readonly/><br> 
         <span class = "headings">Level: </span><input type="number" name="level" value="${hero.level}"/><br> 
-        <span class = "headings">Race: </span> <input type="text" name="race" value="${hero.race}"/><br> 
+        <span class = "headings">Race: </span> <input type="text" name="race" value="${hero.race}" readonly/><br> 
          <span class = "headings">Max HP: </span>  <input type="number" name="maxHP" value="${hero.maxHP}"/><br> 
         <span class = "headings">Current HP: </span><input type="number" name="currentHP" step="any" value="${hero.currentHP}" /><br> 
         <span class = "headings">Temporary HP: </span> <input type="number" name="tempHP" value="${hero.tempHP}"/><br> 
-        <span class = "headings">Strength: </span><input type="number" name="strength" step="any" value="${hero.strength}"/><br> 
-        <span class = "headings">Dexterity: </span><input type="number" name="dexterity" step="any" value="${hero.dexterity}"/><br> 
-        <span class = "headings">Constitution: </span><input type="number" name="constitution" step="any" value="${hero.constitution}"/><br> 
-        <span class = "headings">Intelligence: </span><input type="number" name="intelligence" step="any" value="${hero.intelligence}"/><br> 
-        <span class = "headings">Wisdom: </span><input type="number" name="wisdom" step="any" value="${hero.wisdom}"/><br> 
-        <span class = "headings">Charisma: </span><input type="number" name="charisma" step="any" value="${hero.charisma}"/><br> 
+        <span class = "headings">Strength: </span><input type="number" name="strength" step="any" value="${hero.strength}"/><br> ${strRoll}
+        <span class = "headings">Dexterity: </span><input type="number" name="dexterity" step="any" value="${hero.dexterity}"/><br> ${dexRoll}
+        <span class = "headings">Constitution: </span><input type="number" name="constitution" step="any" value="${hero.constitution}"/><br> ${conRoll}
+        <span class = "headings">Intelligence: </span><input type="number" name="intelligence" step="any" value="${hero.intelligence}"/><br> ${intRoll}
+        <span class = "headings">Wisdom: </span><input type="number" name="wisdom" step="any" value="${hero.wisdom}"/><br> ${wisRoll}
+        <span class = "headings">Charisma: </span><input type="number" name="charisma" step="any" value="${hero.charisma}"/><br> ${chaRoll}
+       
+       
+       
         <div class="btn-group">
 								<input type="hidden" name="hero" value="${hero}" />
 								<button type="submit" class="btn btn-primary">Update</button>
@@ -38,7 +41,7 @@
 							<form:form action="deleteHero.do" method="POST">
 								<input type="hidden" name="heroid" value="${hero.id}" />
 								<button type="submit" class="btn btn-primary" value="Delete">Delete</button>
-							</form:form> <form:form action="intro.html" method="GET">
+							</form:form> <form:form action="index.do" method="GET">
 								<button type="submit" class="btn btn-primary" value="Back">Back</button>
 							</form:form></div>
     

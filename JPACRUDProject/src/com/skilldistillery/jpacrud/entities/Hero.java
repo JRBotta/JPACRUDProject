@@ -2,9 +2,12 @@ package com.skilldistillery.jpacrud.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 
 @Entity
 public class Hero {
@@ -13,8 +16,9 @@ public class Hero {
 	@Id
 	private int id;	
 	@Column(name="class")
-	private String dndClass;
-	private String level;
+	@Enumerated(EnumType.STRING)
+	private DndClass dndClass;
+	private int level;
 	private String race;
 	@Column(name="max_hp")
 	private int maxHP;
@@ -33,10 +37,11 @@ public class Hero {
 	private String ideals;
 	private String bonds;
 	private String flaws;
-	public String getLevel() {
+	
+	public int getLevel() {
 		return level;
 	}
-	public void setLevel(String level) {
+	public void setLevel(int level) {
 		this.level = level;
 	}
 	private String name;
@@ -55,10 +60,10 @@ public class Hero {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getDndClass() {
+	public DndClass getDndClass() {
 		return dndClass;
 	}
-	public void setDndClass(String dndClass) {
+	public void setDndClass(DndClass dndClass) {
 		this.dndClass = dndClass;
 	}
 	public String getRace() {
@@ -152,4 +157,5 @@ public class Hero {
 		this.name = name;
 	}
 	//getters / setters end
+
 }

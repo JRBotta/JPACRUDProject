@@ -1,0 +1,7 @@
+package com.skilldistillery.jpacrud.level;
+
+import com.skilldistillery.jpacrud.entities.Hero;
+
+public class Fighter extends Hero {
+
+}

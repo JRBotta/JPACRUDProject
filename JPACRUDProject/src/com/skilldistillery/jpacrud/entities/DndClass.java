@@ -1,0 +1,22 @@
+package com.skilldistillery.jpacrud.entities;
+
+public enum DndClass {
+
+		BARD("Bard"), CLERIC("Cleric"), DRUID("Druid"), FIGHTER("Fighter"), 
+		MONK("Monk"), PALADIN("Paladin"), RANGER("Ranger"), ROGUE("Rogue"), 
+		SORCEROR("Sorceror"), WARLOCK("Warlock"), WIZARD("Wizard");
+		
+		
+		private final String fieldDescription;
+		
+		
+	    private DndClass(String value) {
+	        fieldDescription = value;
+	    }
+
+	    public String getFieldDescription() {
+	        return fieldDescription;
+	    }
+		
+		
+}
