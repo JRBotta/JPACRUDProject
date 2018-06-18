@@ -19,7 +19,8 @@ public class Hero {
 	@Enumerated(EnumType.STRING)
 	private DndClass dndClass;
 	private int level;
-	private String race;
+	@Enumerated(EnumType.STRING)
+	private Race race;
 	@Column(name="max_hp")
 	private int maxHP;
 	private int strength;
@@ -66,10 +67,10 @@ public class Hero {
 	public void setDndClass(DndClass dndClass) {
 		this.dndClass = dndClass;
 	}
-	public String getRace() {
+	public Race getRace() {
 		return race;
 	}
-	public void setRace(String race) {
+	public void setRace(Race race) {
 		this.race = race;
 	}
 	public int getMaxHP() {

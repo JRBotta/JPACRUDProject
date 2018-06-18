@@ -80,6 +80,10 @@ public class HeroController {
 	@RequestMapping(path = "created.do", method = RequestMethod.POST)
 	public ModelAndView created(Hero hero, String roll) {
 		ModelAndView mv = new ModelAndView();
+		List<DndClass> classList = new ArrayList<DndClass>( Arrays.asList(DndClass.values() ));
+		mv.addObject("classList", classList);
+		List<Race> raceList = new ArrayList<Race>( Arrays.asList(Race.values() ));
+		mv.addObject("raceList", raceList);
 		if(roll.equals("true")) {
 			hero.setCharisma(Dice.rollStats());
 			hero.setStrength(Dice.rollStats());
